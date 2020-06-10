@@ -1,10 +1,3 @@
-# get the working directory --------------------------------------------------------------------------------------------------------------------
-getwd()
-
-## set the working directory where to work and your data exists
-setwd("C:\\Users\\HP 1\\Desktop\\Data projects\\")
-
-## Data loading phase ---------------------------------------------------------------------------------------------------------------------------
 ## load the train and test data
 train_data = read.csv("product_train.csv", stringsAsFactors = F)
 test_data = read.csv("product_test.csv",stringsAsFactors = F)
@@ -80,7 +73,7 @@ train_data$went_on_backorder = as.numeric(train_data$went_on_backorder == 'Yes')
 
 
 ## seprate train and test data from train_data
-v= sample(nrow(train_data), 0.80 * (nrow(train_data)))
+v = sample(nrow(train_data), 0.80 * (nrow(train_data)))
 training_data = train_data[v,]
 testing_data = train_data[-v,]
 
@@ -197,7 +190,7 @@ final.test.prediction = gsub("TRUE","Yes",final.test.prediction)
 
 
 ## writing the results in csv file ---------------------------------------------------------------------------------------------------------
-write.csv(final.test.prediction,"Ajay_Yadav_P3_part2.csv",row.names = F)
+write.csv(final.test.prediction,"Nitesh_Bhosle_P3_part2.csv",row.names = F)
 
 
 
